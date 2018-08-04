@@ -1,21 +1,722 @@
 {{!< default}}
-<div class="container">
-	<div class="jumbotron"><img src="/images/logo.svg" width="160">
-		<h1>Welcome</h1>
-		<p>This is your new <a href='http://keystonejs.com' target='_blank'>KeystoneJS</a> website.</p>
-		<p>
-			It includes the latest versions of
-			<a href='http://getbootstrap.com/' target='_blank'>Bootstrap</a>
-			and <a href='http://www.jquery.com/' target='_blank'>jQuery</a>.
+<div id="page-top" data-spy="scroll" data-target=".navbar-custom">
+	<style>
+	@font-face
+	{
+	font-family: myFirstFont;
+	src: url(fonts/HummingbirdBasic.ttf);
+	}
+	body{
+	font-family: myFirstFont;
+	font-size:20px;
+	}
+	.lightbox {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(0, 0, 0, .5);
+	z-index:99;
+	}
+	.toolbarLB {
+	text-align: right;
+	padding: 3px;
+	}
+	.closeLB {
+	color: red;
+	cursor: pointer;
+	}
+	.lightbox .iframeContainer {
+	vertical-align: middle;
+	background: #CCC;
+	padding: 2px;
+	}
+	.lightbox.closed {
+	display: none;
+	}
+	.maincontent
+	{
+	width:700px;
+	height:387px;
+	border:none;
+	overflow:scroll;
+	padding:5px;
+	}
+	@media only screen and (max-width: 780px) {
+	.maincontent {
+	width:280px;
+	height:250px;
+	}
+	}
+	</style>
+	<div class="lightbox">
+	<div class="iframeContainer">
+		<div class="toolbarLB">
+		<!--<span class="closeLB" onclick="lightBoxClose()">x</span>-->
+		</div>
+		<div class="maincontent">
+		<h2> Disclaimer </h2>
+		<p>Starlight Sleep Consulting Inc., (“Starlight”) is a corporation owned and operated by Lindsay Zador.
+			Lindsay Zador is a certified Infant and Toddler Sleep Consultant, through Baby Sleep Consultant NZ.   
+			<br><br>
+			Starlight, Starlight facebook page, Instagram, www.starlightsleepconsulting.ca and other digital media outlets, promotes broad consumer understanding and knowledge of various health topics, including family and child sleep practices. All the information on this Website is published in good faith and for general information and educational purposes only. The information is not intended to be a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health care provider with any questions you may have regarding a medical condition or treatment and before undertaking a new health care regimen. Never disregard professional medical advice or delay in seeking it because of something you have read on this site.
+			<br><br>Any changes the client makes to their baby’s sleeping or eating arrangements are the client’s decision and Starlight only suggests changes, of which the client is responsible for choosing to implement.
+			<br><br>Starlight will use reasonable efforts to include up-to-date and accurate information on this Internet site, but makes no representations, warranties, or assurances as to the accuracy, currency, or completeness of the information provided. Starlight shall not be liable for any damages, including but not limited to death or injury resulting from the client’s access to Starlight or inability to access Starlight, this Internet site, digital media, or from the client’s reliance on any information provided at this Internet site.
+			<br><br>You may not for any reason, distribute, modify, duplicate, transmit, reuse, repost, or use the content of the site for public or commercial purposes, including the text, images, audio, and video without Starlight’s written permission.
+			<br><br>From Starlight’s Web site, you can visit other Web sites by clicking on links from our Web site to theirs. While Starlight strives to provide only links to useful and ethical Web sites, Starlight has no control over the content and nature of these sites, and the links to other Web sites do not imply recommendations or endorsements for the Web sites or the content found on them.
+			<br><br>Please also be aware that when you leave Starlight’s site, other sites may have different privacy policies and terms that are beyond Starlight’s control.
+			<br><br>Starlight will take precautions to protect your information. You may submit information through our Web site. Please be aware that it is possible for information transferred through our Web site to be intercepted through electronic means.
+			<br><br>Starlight only has access to collect personally identifiable information that you voluntarily give, such as; name, address, phone, and billing information via email or other direct contact from the client. Starlight will not sell or rent this information to anyone.
+			<br><br>Starlight will use your personally identifiable information to respond to you, regarding the reason you contacted Starlight. Starlight will not share personal information with any third party other than as necessary to provide services unless required to do so by law e.g. to ship an order/prize. 
+			<br><br>USE OF THE SITE www.starlightsleepconsulting.ca IS AT YOUR OWN RISK. THE MATERIALS, INFORMATION, PRODUCTS AND SERVICES OFFERED ON OR THROUGH THE SITES AND ANY THIRD-PARTY SITES ARE PROVIDED “AS IS” AND WITHOUT WARRANTIES OF ANY KIND EITHER EXPRESS OR IMPLIED. TO THE FULLEST EXTENT PERMISSIBLE PURSUANT TO APPLICABLE LAW, Starlight DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. Starlight DOES NOT WARRANT THAT THE SITES OR ANY OF ITS FUNCTIONS WILL BE UNINTERRUPTED OR ERROR-FREE, THAT DEFECTS WILL BE CORRECTED, OR THAT ANY PART OF THE SITES OR THE SERVERS THAT MAKE SERVICES AVAILABLE, ARE FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS. YOU ASSUME THE ENTIRE COST OF ALL NECESSARY MAINTENANCE, REPAIR OR CORRECTION. Starlight DOES NOT WARRANT OR MAKE ANY REPRESENTATIONS REGARDING THE USE OR THE RESULTS OF THE USE OF THE SITES OR MATERIALS ON THE SITES OR ON THIRD-PARTY SITES IN TERMS OF THEIR CORRECTNESS, ACCURACY, TIMELINESS, RELIABILITY OR OTHERWISE. Starlight ASSUMES NO LIABILITY FOR THE CONTENT OF THE SITES OR OUR ASSESSMENTS, DOES NOT REPRESENT OR WARRANT THAT USE OF THE CONTENT WILL NOT INFRINGE RIGHTS OF THIRD PARTIES AND HAS NO RESPONSIBILITY OR LIABILITY OF ACTIONS OF THIRD PARTIES OR FOR CONTENT PROVIDED BY OTHERS. IN NO EVENT SHALL Starlight, ITS AFFILIATES EMPLOYEES, AGENTS OR CONTENT PROVIDERS BE LIABLE FOR ANY INDIRECT, CONSEQUENTIAL, SPECIAL, INCIDENTAL OR PUNITIVE DAMAGES, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES, OR FOR ANY AMOUNT OF DIRECT DAMAGES.
+			<br><br>Full Payment for all packages will be required upon the return of the questionnaire and contract. Once the payment is received in full, you will receive an acknowledgement and an approximate time of receiving your plan. In home Packages and Groups will be confirmed once payment has been made.
+			<br><br>Cancellations within 72 hours of payment will result in a refund of 50% of the fee. 
+			<br><br>International bookings outside Canada may incur an additional booking fee to cover additional transaction costs.
+			<br><br>Travel to a client’s dwelling is addressed on a person to person basis, and is at the discretion of Starlight, however any travel, within 30 Kilometers is included in the package but an additional fee may be charged if Starlight is required to travel further than 30 Kilometers.
 		</p>
-		<p>Visit the <a href='http://keystonejs.com/guide' target='_blank'>Getting Started</a> guide to learn how to customise it.</p>
-		<hr>
-		<p>We have created a default Admin user for you with the email <strong>amandeepsingh1592@gmail.com</strong> and the password <strong>Aman98020</strong>.</p>
-		<p><a href="/keystone/signin" style="margin-right: 10px" class="btn btn-lg btn-primary">Sign in</a> to use the Admin UI.</p>
-		<hr>
-		<p>
-			Remember to <a href='https://github.com/keystonejs/keystone' target='_blank'>Star KeystoneJS on GitHub</a> and
-			<a href='https://twitter.com/keystonejs' target='_blank'>follow @keystonejs</a> on twitter for updates.
-		</p>
+		<button type="submit" id="submit_btn" value="I Accept" class="btn center-block" onclick="lightBoxClose()">I Accept</button>
+		</div>
+	</div>
+	</div>
+	<!-- Start Switcher -->                           
+	<div class="demo_changer">
+	<!-- end opener icon -->
+	<div class="form_holder text-center">
+		<div class="row">
+		<div class="col-lg-12">
+		</div>
+		<!-- end col -->
+		</div>
+		<!-- end row -->
+	</div>
+	<!-- end form_holder -->
+	</div>
+	<!-- end demo_changer -->
+	<!-- Preloader  --> 
+	<div id="preloader">
+	<div class="spinner">
+		<div class="bounce1"></div>
+		<div class="bounce2"></div>
+		<div class="bounce3"></div>
+	</div>
+	</div>
+	<!-- /Preloader ends --> 
+	<div id="page-width">
+	<!-- Navbar -->
+	<nav class="navbar navbar-custom navbar-fixed-top"  id="navbar-custom">
+	<div class="container">
+		<!-- Logo and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-brand">
+		<i class="fa fa-bars"></i>
+		</button>
+		<!-- Logo -->
+		<div class="navbar-brand page-scroll">
+			<a href="#page-top"><img src="img/logo_light.png"  class="img-responsive" alt=""></a>
+		</div>
+		</div>
+		<!-- /.navbar-header -->
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="navbar-brand">
+		<ul class="nav navbar-nav page-scroll navbar-right">
+			<li ><a href="#page-top">Home</a></li>
+			<li><a href="#about">About Us</a></li>
+			<li><a href="#tuition">Packages</a></li>
+			<li ><a href="#testimonials">Testimonials</a></li>
+			<li><a href="#blog-preview">Blog</a></li>
+			<li><a href="#gallery">Graduates</a></li>
+			<li><a href="#contact">Contact</a></li>
+			<li><a href="footer">Disclaimer</a></li>
+		</ul>
+		</div>
+		<!-- /.navbar-collapse -->
+	</div>
+	<!-- /container -->
+	</nav>
+	<!-- /nav -->
+	<!-- Home Page -->
+	<div id="main" class="home">
+	<!-- Slider -->
+	<div id="layerslider">
+		<!-- Slide 1 -->
+		<a href="#contact">
+		<div class="ls-slide" data-ls="transition2d:48;timeshift:-2000;">
+			<!-- Background image -->
+			<img src="img/slide1.jpg" class="ls-bg"  alt="Slide background"/>
+		</div>
+		</a>
+		<!-- Slide 2 -->
+		<div class="ls-slide" data-ls="transition2d:48;timeshift:-2000;">
+		<!-- Background image -->
+		<img src="img/slide2.jpg" class="ls-bg"  alt="Slide background"/>
+		</div>
+	</div>
+	<!-- /Layerslider ends-->
+	<!-- Section about -->
+	<section id="about" class="container-fluid">
+		<!-- Section heading -->
+		<div class="section-heading">
+		<h1>About Us</h1>
+		<!-- divider -->
+		<img src="img/stars.png"  alt="Stars"/>
+		<div class="hr"></div>
+		</div>
+		<div class="container">
+		<div class="col-md-12 col-centered">
+			<div class="tab" role="tabpanel">
+			<!-- Tab panes -->
+			<div class="tab-content">
+				<div role="tabpanel" class="tab-pane active in fade col-lg-12" id="Section1">
+				<div class="col-lg-7">
+					<h3  class="text-center">About Us</h3>
+					<p>I know you’re tired, How do I know? You are on the Starlight Sleep Consulting website.</p>
+					<p>							   
+					No one ever really understands how tiring having a baby is until they’ve experienced it.
+					It comes from working both day shift and night shift with bits and pieces of sleep scattered throughout. 
+					I’ve been there, done that, got the bags under my eyes. For my first little one, 
+					I read books on sleep and come three to four months in, things improved. But, along came number two, 
+					leaving little or no time to read and a busy two and a half-year-old buzzing around, I needed MORE sleep! 
+					I called a sleep consultant and was given some great tips and a plan. My life was so changed that I decided 
+					that I want to help other tired babies, toddlers and caregivers! I started a course, got oodles of volunteer 
+					clients and got here…ready to help you! I know the patience it takes to make changes and how hard it is when 
+					you are  already sleep deprived; and I have both the patience and support needed to help you. For proof, check out my <a href="https://www.facebook.com/starlightsleepconsulting/" target="_blank">Facebook </a> reviews
+					</p>
+				</div>
+				<div class="col-lg-5">
+					<img src="img/about1.jpg" alt="" class="img-curved  center-block img-responsive"/>
+				</div>
+				<div role="tabpanel" class="tab-pane active in fade col-lg-12">
+					<h2  class="text-center">The Process</h2>
+					<div class="col-lg-3">
+					<h3  class="text-center">The Questionnaire</h3>
+					<p>	You will receive a questionnaire to complete that will help me to get to know more about you and your child. There are no two parents or children the same. </p>
+					</div>
+					<div class="col-lg-3">
+					<h3  class="text-center">Custom Plan</h3>
+					<p>	Then I create a custom plan to get your little one sleeping better and, by default, YOU. This plan will inform you about why sleep is the way it is and why the steps we’re about to undertake will be a game changer! Knowledge is power, so you are more likely to carry out the plan if you understand WHY! </p>
+					</div>
+					<div class="col-lg-3">
+					<h3  class="text-center">Action</h3>
+					<p>	Once the plan is in your hands, it is time for action. Consistency and patience are key with your little ones...they thrive on it! </p>
+					</div>
+					<div class="col-lg-3">
+					<h3  class="text-center">Support</h3>
+					<p>	I am with you along the way to answer questions, steer you in the right direction and troubleshoot. Support in putting the plan into Action is by: e-mail, text, phone, Skype or Facetime. This phase is a two-way street to keep information and the Plan moving forward. You may be asked to complete a journal to give me more insight into your progress.</p>
+					</div>
+				</div>
+				<!-- /tab-panel -->
+				<!-- /tab-content -->
+				</div>
+				<!-- /tab -->
+			</div>
+			<!-- /col-md-11 -->
+			</div>
+			<!-- /container -->
+	</section>
+	<!-- /section ends-->
+	<!-- Section Tuition -->
+	<section id="tuition" class="container-fluid">
+	<!-- Section heading -->
+	<div class="section-heading">
+	<h1>Packages</h1>
+	<!-- divider -->
+	<img src="img/stars.png"  alt="Stars"/>
+	<div class="hr"></div>
+	</div>
+	<div class="container">
+	<p>Each package includes a free 20-minute consult, sleep questionnaire, custom sleep plan, informational handouts,
+	phone, email, text, Skype, & Facetime support.</p>
+	<!-- Services Boxes -->
+	<div id="services-slider" class="owl-carousel margin1 col-lg-12">
+	<!-- service box -->
+	<div class="serviceBox bg-color1">
+	<!-- service image-->
+	<img src="img/service1.jpg" class="img-responsive img-circle" alt=""/> 
+	<!-- service content -->
+	<div class="service-content text-light">
+	<h4 class="title">Sip and Sleep</h4>
+	<p class="description">
+	Do you have a few friends going through the same stage as you? This is a great one-hour in-home group package for learning together. Includes one week of individual follow up unlimited emails and 2 phone calls, texts, Skype or Facetime up per person. Maximum four people plus babies,  babies are welcome. Small treats provided. Mileage extra outside of a 30-kilometre radius from Baden.</p>
+	<span class="money">$120.00 </span>
+	</div>
+	</div>
+	<!-- /col-md-6 col-lg-3 -->
+	<!-- service box -->
+	<div class="serviceBox bg-color2">
+	<!-- service image-->
+	<img src="img/service2.jpg" class="img-responsive img-circle" alt=""/> 
+	<!-- service content -->
+	<div class="service-content text-light">
+	<h4 class="title">Problem - Prevention </h4>
+	<p class="description">
+	For those looking ahead, this will send you in the right direction to avoid hurdles.  Included are: a plan and tips to help you guide your next move; one week of five phone calls, texts, Skype or Facetime; and unlimited email support. Perfect for expectant parents, those starting solids or tots changing beds. 
+	This is a great package that Grandma or Aunty-to-be could give as a present for the expectant family. </p>
+	<span class="money">$150.00 </span>
+	</div>
+	</div>
+	<!-- /service box -->
+	<!-- /col-md-6 col-lg-3 -->
+	<!-- service box -->
+	<div class="serviceBox bg-color3">
+	<!-- service image-->   
+	<img src="img/service3.jpg" class="img-responsive img-circle" alt=""/> 
+	<!-- service content -->
+	<div class="service-content text-light">
+	<h4 class="title">Newborn</h4>
+	<p class="description">
+	For babies 0-4 months.  Master soothing techniques, ease your worries about sleep associations, make sure the sleep environment is safe and optimal and get the most rest you can. Two weeks with unlimited emails and five phone calls, texts, Skype or Facetime.</p>
+	<br><br><br>
+	<span class="money">$200.00 </span>
+	</div>
+	</div>
+	<!-- /service box -->
+	<!-- service box -->
+	<div class="serviceBox bg-color1">
+	<!-- service image-->
+	<img src="img/service4.jpg" class="img-responsive img-circle" alt=""/> 
+	<!-- service content -->
+	<div class="service-content text-light">
+	<h4 class="title">4 to 18 Months</h4>
+	<p class="description">
+	Struggling with post newborn phase is common. There are many things to take into consideration. New abilities, eating, a new sibling! All relevant information is covered in this package. Two weeks with unlimited emails and five phone calls, texts, Skype or Facetime. 
+	</p><br><br><br>
+	<span class="money">$350.00 </span>
+	</div>
+	</div>
+	<!-- /service box -->
+	<!-- service box -->
+	<div class="serviceBox bg-color2">
+	<!-- service image-->
+	<img src="img/service5.jpg" class="img-responsive img-circle" alt=""/> 
+	<!-- service content -->
+	<div class="service-content text-light">
+	<h4 class="title">18 Months and Up</h4>
+	<p class="description">
+	Oh toddlers, how do we get them to stop and recharge? A well-sleeping toddler has better attention and mood and learns better. Let's get your big kid sleeping well so he/she can seize the “play!” Two weeks with unlimited emails and five phone calls, texts, Skype or Facetime. </p>
+	<br><br>
+	<span class="money">$350.00 </span>
+	</div>
+	</div>
+	<!-- /service box -->
+	<!-- service box -->
+	<div class="serviceBox bg-color3">
+	<!-- service image-->
+	<img src="img/service6.jpg" class="img-responsive img-circle" alt=""/> 
+	<!-- service content -->
+	<div class="service-content text-light">
+	<h4 class="title">Multiple Children</h4>
+	<p class="description">
+	Is there more than one sleepless little one under your roof? Choose the applicable packages for their age groups and save 15% off the total. </p>
+	<br><br><br><br><br>
+	<span class="money">Save 15%</span>
+	</div>
+	</div>
+	<!-- /service box -->
+	<!-- service box -->
+	<div class="serviceBox bg-color2">
+	<!-- service image-->
+	<img src="img/service5.jpg" class="img-responsive img-circle" alt=""/> 
+	<!-- service content -->
+	<div class="service-content text-light">
+	<h4 class="title">Home Visits</h4>
+	<p class="description">
+	Please ask about in home visits if you are interested. They are addressed on an as-requested basis. Mileage will be added outside of a 30-kilometre radius.
+	</p><br><br><br><br><br><br>
+	</div>
+	</div>
+	<!-- /service box -->
+	</div>
+	<!-- /services-slider -->
+	</div>
+	<!--/container -->
+	</section>
+	<!-- /section ends-->
+	<!-- Section Testimonials -->
+	<section id="testimonials" class="container-fluid small-section">
+	<!-- Section heading -->
+	<div class="section-heading">
+	<h1 class="text-light">What Parents Say</h1>
+	<!-- divider -->
+	<img src="img/stars.png"  alt="Stars"/>
+	<div class="hr"></div>
+	</div>
+	<!-- Testimonial Slider -->
+	<div class="container">
+	<div id="testimonial-slider" class="owl-carousel ">
+	<!-- Testimonial 1 -->
+	<div class="testimonial">
+	<div class="description">
+	<p>
+	We started off with a baby that was all over the place with sleeping and frankly had no clue what I needed to do for him. He would only nap in my arms and that was for only 15min. I was resorting to a lot of co-sleeping in order to get him to sleep well. Lindsay listened to all my issues, formulated a plan and helped me implement it every step of the way. She was always quick to respond to my million of questions. What I appreciated was that she provided me with the rationale and research behind the actions we needed to take. I leaned a lot and with her help I know have a baby that naps and sleeps on his own. He is overall much more content and I can tell he appreciates a schedule. Thank you!</p>
+	</div>
+	<div class="testimonial-review">
+	<!-- Testimonial image -->
+	<img src="img/testimonial1.jpg" class="img-circle" alt=""/>
+	<!-- Testimonial title-->
+	<h2 class="testimonial-title">
+	Jenny Young
+	</h2>
+	</div>
+	</div>
+	<!-- /Testimonial 1 -->
+	<!-- Testimonial 2 -->
+	<div class="testimonial">
+	<div class="description">
+	<p>
+	Thank you so much Lindsay! I originally consulted Lindsay because I was wanting to improve daytime naps and overall nighttime sleep. My LO was only sleeping for approximately 45 mins at a time during the day, and up every 2-3 hours over night. Needless to say I was exhausted! I am so happy to say that we can count on our LO having 2 hour naps morning and lunchtime and the 3rd nap is around 45-1 hour! We are still getting up throughout the night, but it has improved greatly, and we are feeling refreshed!
+	Lindsay was great to work with; knowledgable, supportive and flexible. 
+	Thanks again!!<br><br><br></p>
+	</div>
+	<div class="testimonial-review">
+	<!-- Testimonial image -->
+	<img src="img/testimonial2.jpg" class="img-circle" alt=""/>
+	<!-- Testimonial title -->
+	<h2 class="testimonial-title">
+	Patrice Shantz
+	</h2>
+	</div>
+	</div>
+	<!-- /Testimonial 2 -->
+	<!-- Testimonial 3 -->
+	<div class="testimonial">
+	<div class="description">
+	<p>
+	Lindsay was amazing to work with. She was patient, understanding and flexible to my needs. Im a mom of three- first was a dream sleeper, next was a terror and this one was looking rough. Though I've learned many things after parenting two before it was helpful to have outside perspective put the pieces of the puzzle together for me. Lindsay worked with my busy families schedule and needs and we worked together to find realistic goals and a plan for our family. I would suggest using her services for a first time parent or experienced parent. You are a better parent when you have sleep, your child is better behaved with sleep- this is a very worthwhile investment for happiness and sanity. Thanks Lindsay! ❤️😴</p>
+	</div>
+	<div class="testimonial-review">
+	<!-- Testimonial image -->
+	<img src="img/testimonial3.jpg" class="img-circle" alt=""/>
+	<!-- Testimonial title -->
+	<h3 class="testimonial-title">
+	Lisa Roszel
+	</h3>
+	</div>
+	</div>
+	<!-- /Testimonial 3 -->
+	<!-- Testimonial 4 -->
+	<div class="testimonial">
+	<div class="description">
+	<p>
+	Lindsay was a pleasure to work with. She helped us so much getting our LO to go to sleep. We went from short 30 minute naps and taking over an hour every night to get her to sleep. To naps that last an hour or more and her going to sleep in just 15 minutes! He went above and beyond weeks after working with her she asked me how it was going and we had just switched to the crib and it was not going well at all. She reassessed what we were doing and sleeping is going great again! Thanks for all your help!</p>
+	<br><br><br><br></div>
+	<div class="testimonial-review">
+	<!-- Testimonial image -->
+	<img src="img/testimonial4.jpg" class="img-circle" alt=""/>
+	<!-- Testimonial title -->
+	<h3 class="testimonial-title">
+	Katie Darden QB
+	</h3>
+	</div>
+	</div>
+	<!-- /Testimonial 4 -->
+	</div>
+	</div>
+	<!--/Testimonial Slider -->
+	</div>
+	<!--/container -->
+	</section>
+	<!-- /Section -->
+	<!-- Section Blog Preview -->
+	<section id="blog-preview" class="container-fluid">
+	<!-- Section heading -->
+	<div class="section-heading">
+	<h1>Blog</h1>
+	<!-- divider -->
+	<img src="img/stars.png"  alt="Stars"/>
+	<div class="hr"></div>
+	</div>
+	<!-- Blog Slider -->
+	<div id="blog-slider" class="owl-carousel">
+	<!-- Blog Post Prev 1 -->	
+	<div class="col-md-12">
+	<div class="blog-prev" >
+	<!-- Blog Post Image  -->
+	<img src="img/blogprev1.jpg" alt="" />
+	<!-- Blog Post date -->
+	<div class="date"><span class="day">22</span><span class="month">Jul</span></div>
+	<!-- Blog Caption -->
+	<div class="blog-caption">
+	<h4>What is sleep training?</h4>
+	</div>
+	<div class="hover"></div>
+	<a href="blog-single-one.html"></a>
+	</div>
+	<!-- /Blog Post Prev -->
+	</div>
+	<!-- /col-md -->
+	<!-- Blog Post Prev 2 -->	
+	<div class="col-md-12">
+	<div class="blog-prev" >
+	<!-- Blog Post Image  -->
+	<img src="img/blogprev2.jpg" alt="" />
+	<!-- Blog Post date -->
+	<div class="date"><span class="day">18</span><span class="month">Jul</span></div>
+	<!-- Blog Caption -->
+	<div class="blog-caption">
+	<h4>Misconceptions</h4>
+	</div>
+	<div class="hover"></div>
+	<a href="blog-single-two.html"></a>
+	</div>
+	<!-- /Blog Post Prev -->
+	</div>
+	<!-- /col-md -->
+	<!-- Blog Post Prev 3 -->	
+	<div class="col-md-12">
+	<div class="blog-prev" >
+	<!-- Blog Post Image  -->
+	<img src="img/blogprev3.jpg" alt="" />
+	<!-- Blog Post date -->
+	<div class="date"><span class="day">04</span><span class="month">Jul</span></div>
+	<!-- Blog Caption -->
+	<div class="blog-caption">
+	<h4>Toddler bed</h4>
+	</div>
+	<div class="hover"></div>
+	<a href="blog-single-three.html"></a>
+	</div>
+	<!-- /Blog Post Prev -->
+	</div>
+	<!-- /col-md-12 -->
+	<!-- Blog Post Prev 4 -->	
+	<!-- /col-md-12 -->			 
+	</div>
+	<!-- /blog-slider -->
+	</section>
+	<!-- /section ends -->
+	<!-- Section Gallery -->
+	<section id="gallery" class="container-fluid bg-color1">
+	<!-- Section heading -->
+	<div class="section-heading">
+	<h1 class="text-light">Graduates</h1>
+	<!-- divider -->
+	<img src="img/stars.png"  alt="Stars"/>
+	<div class="hr light"></div>
+	</div>
+	<!-- Gallery -->
+	<div class="polaroids margin1">
+	<div id="lightbox">
+	<!-- image1 -->
+	<div class="facilities col-lg-3 col-md-6 col-sm-6">
+	<div class="polaroid-item">
+	<a href="img/gallery1.jpg" data-gal="prettyPhoto[gallery]">
+	<img alt="" src="img/gallery1.jpg" class="img-responsive"/>
+	</a>
+	</div>
+	</div>
+	<!-- image2 -->
+	<div class="staff col-lg-3 col-md-6 col-sm-6">
+	<div class="polaroid-item">
+	<a href="img/gallery2.jpg" data-gal="prettyPhoto[gallery]">
+	<img alt="" src="img/gallery2.jpg" class="img-responsive"/>
+	</a>
+	</div>
+	</div>
+	<!-- image3 -->
+	<div class="facilities col-lg-3 col-md-6 col-sm-6">
+	<div class="polaroid-item">
+	<a href="img/gallery3.jpg" data-gal="prettyPhoto[gallery]">
+	<img alt="" src="img/gallery3.jpg" class="img-responsive"/>
+	</a>
+	</div>
+	</div>
+	<!-- image4 -->
+	<div class="staff  col-lg-3 col-md-6 col-sm-6">
+	<div class="polaroid-item">
+	<a href="img/gallery4.jpg" data-gal="prettyPhoto[gallery]">
+	<img alt="" src="img/gallery4.jpg" class="img-responsive"/>
+	</a>
+	</div>
+	</div>
+	<!-- image5 -->
+	<div class="facilities col-lg-3 col-md-6 col-sm-6">
+	<div class="polaroid-item">
+	<a href="img/gallery5.jpg" data-gal="prettyPhoto[gallery]">
+	<img alt="" src="img/gallery5.jpg" class="img-responsive"/>
+	</a>
+	</div>
+	</div>
+	<!-- image6 -->
+	<div class="staff col-lg-3 col-md-6 col-sm-6">
+	<div class="polaroid-item">
+	<a href="img/gallery6.jpg" data-gal="prettyPhoto[gallery]">
+	<img alt="" src="img/gallery6.jpg" class="img-responsive"/>
+	</a>
+	</div>
+	</div>
+	<!-- image7 -->
+	<div class="facilities col-lg-3 col-md-6 col-sm-6">
+	<div class="polaroid-item">
+	<a href="img/gallery7.jpg" data-gal="prettyPhoto[gallery]">
+	<img alt="" src="img/gallery7.jpg" class="img-responsive"/>
+	</a>
+	</div>
+	</div>
+	<!-- image8 -->
+	<div class="staff col-lg-3 col-md-6 col-sm-6">
+	<div class="polaroid-item">
+	<a href="img/gallery8.jpg" data-gal="prettyPhoto[gallery]">
+	<img alt="" src="img/gallery8.jpg" class="img-responsive"/>
+	</a>
+	</div>
+	</div>
+	</div>
+	<!-- /lightbox --> 
+	</div>
+	<!-- /polaroids --> 
+	</section>
+	<!-- /Section ends -->
+	<!-- Section Contact -->
+	<section id="contact" class="bg-lightcolor1 container-fluid nobg-small">
+	<!-- Section heading -->
+	<div class="section-heading margin1">
+	<h1>Contact Us</h1>
+	<!-- divider -->
+	<img src="img/stars.png"  alt="Stars"/>
+	<div class="hr"></div>
+	</div>
+	<!-- Contact -->
+	<div class="container">
+	<!-- Contact Form -->
+	<div class="col-md-5">
+	<!-- Form Starts -->
+	<div id="contact_form" >
+	<h2>Get in Touch !</h2>
+	<div class="form-group">
+	<label>Name:</label><input type="text" name="name" class="form-control input-field"  required="">                    
+	<label>Email:</label><input type="email" name="email" class="form-control input-field" required="">           
+	<label>Subject:</label><input type="text" name="subject" class="form-control input-field" required="">                     
+	</div>
+	<label>Message:</label>
+	<textarea name="message" id="message" class="textarea-field form-control" rows="4"  required=""></textarea>
+	<button type="submit" id="submit_btn" value="Submit" class="btn center-block">Send message</button>
+	</div>
+	<!-- Contact results -->
+	<div id="contact_results"></div>
+	</div>
+	<div class="res-margin">
+	<div class="col-md-6 col-md-offset-1 well text-center">
+	<h4>Information</h4>
+	<!-- contact info -->			   
+	<div class="contact-info ">
+	<p><i class="fa fa-envelope margin-icon"></i><a href="mailto:starlightsleepconsulting@hotmail.com">starlightsleepconsulting@hotmail.com</a></p>
+	<p><i class="fa fa-phone margin-icon"></i>Call us +1 (519) 505-7984</p>
+	<p><i class="fa fa-map-marker margin-icon"></i>Baden, Ontario</p>
+	</div>
+	</div>
+	</div>
+	<!-- /res-margin -->
+	</div>
+	<!-- /container -->
+	</section>
+	<!--/Section ends -->
+	</div>
+	<!-- /main-->
+	<!-- Newsletter -->
+	<section id="newsletter" class="small-section bg-color1">
+		<div class="container text-center text-light">
+		<div class="col-md-6">
+			<h4>Send us your email for our free Babysitter's Guide</h4>
+		</div>
+		<div class="col-md-6">
+			<!-- Form -->				
+			<div id="mc_embed_signup">
+			<!-- your form adresss in the line bellow -->
+			<form action="" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+				<div id="mc_embed_signup_scroll">
+				<div class="mc-field-group">
+					<div class="input-group">
+					<input class="form-control input-lg required email" type="email" value="" name="EMAIL" placeholder="Your email here" id="mce-EMAIL" style="border-color:#5285b1; font-size:32px;">
+					<span class="input-group-btn">
+					<button class="btn btn-color2" type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">Subscribe</button>
+					</span>
+					</div>
+					<!-- Subscription results -->
+					<div id="mce-responses" class="mailchimp">
+					<div class="alert alert-danger response" id="mce-error-response"></div>
+					<div class="alert alert-success response" id="mce-success-response"></div>
+					</div>
+				</div>
+				<!-- /mc-fiel-group -->									
+				</div>
+				<!-- /mc_embed_signup_scroll -->
+			</form>
+			<!-- /form ends -->								
+			</div>
+			<!-- /mc_embed_signup -->
+		</div>
+		<!-- /col-md-6 -->
+		</div>
+		<!-- /container -->
+	</section>
+	<!-- /Section ends -->
+	<!-- Footer starts -->		
+	<footer>
+		<div class="container">
+		<div class="col-md-4">
+			<h6>Disclaimer</h6>
+			<p>Starlight Sleep Consulting Inc., (“Starlight”) is a corporation owned and operated by Lindsay Zador.</p>
+			<a href="disclaimer.html">
+			<p>Read More</p>
+			</a>
+		</div>
+		<!-- /.col-md-4 -->
+		<div class="col-md-4 res-margin">
+			<ul class="list-unstyled footer-icons">
+			<li><i class="fa fa-phone"></i>(519) 505-7984</li>
+			<li><i class="fa fa-envelope"></i>Email: <a href="mailto:starlightsleepconsulting@hotmail.com" >starlightsleepconsulting@hotmail.com</a></li>
+			<li><i class="fa fa-map-marker"></i>Baden, Ontario</li>
+			</ul>
+		</div>
+		<!-- /.col-md-4 -->
+		<div class="col-md-4 text-center">
+			<!--Social icons -->
+			<div class="social-media smaller">
+			<a href="https://www.facebook.com/starlightsleepconsulting/" title="" target="_blank"><i class="fa fa-facebook"></i></a>
+			<a href="https://www.instagram.com/starlight.sleepconsulting/" title="" target="_blank"><i class="fa fa-instagram"></i></a>
+			</div>
+		</div>
+		<!-- Credits-->
+		<div class="credits col-md-12 text-center">
+			<hr/>
+			Copyright © 2018 - Designed by <a href="http://www.amandeepsingh.net/" target="_blank">Amandeep Singh</a>
+			<!-- Go To Top Link -->
+			<div class="page-scroll hidden-sm hidden-xs">
+			<a href="#page-top" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+			</div>
+		</div>
+		<!-- /credits -->
+		</div>
+		<!-- /.container -->
+	</footer>
+	<!-- /footer ends -->
 	</div>
 </div>
+<script type='text/javascript'>
+lightBoxClose = function() {
+  document.querySelector(".lightbox").classList.add("closed");
+}
+</script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.8.2.js"></script>
+<script src="js/starlight/jquery.min.js"></script>
+<script src="js/starlight/bootstrap.min.js"></script>
+<!-- Main Js -->
+<script src="js/starlight/main.js"></script>
+<!-- Contact -->
+<script src="js/starlight/contact.js"></script>
+<!--Other Plugins -->
+<script src="js/starlight/plugins.js"></script>
+<!-- Prefix free CSS -->
+<script src="js/starlight/prefixfree.js"></script>
+<!-- LayerSlider script files -->
+<script src="layerslider/js/layerslider.kreaturamedia.jquery.js" type="text/javascript"></script>
+<!-- Bootstrap Select Tool (For Module #4) -->
+<script src="switcher/js/bootstrap-select.js"></script>
+<!-- UI jQuery (For Module #5 and #6) -->
+<script src="../../../ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.js" type="text/javascript"></script>
+<!-- All Scripts & Plugins -->
+<script src="switcher/js/dmss.js"></script>
